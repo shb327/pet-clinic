@@ -6,22 +6,20 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class User {
+public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(unique = true)
-    private String username;
-    private String password;
-    private String authorities;
-    private String firstName;
-    private String lastName;
-    private String address;
-    private String phoneNumber;
+    private Integer discount;
+    @OneToOne(cascade = CascadeType.ALL)
+    private CustomerType customerType;
+    @OneToMany(cascade = CascadeType.ALL)
+    private Set<Pet> pets;
 }

@@ -12,16 +12,13 @@ import javax.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class User {
+public class Pet {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(unique = true)
-    private String username;
-    private String password;
-    private String authorities;
-    private String firstName;
-    private String lastName;
-    private String address;
-    private String phoneNumber;
+    private String name;
+    private Integer age;
+    private Integer weight;
+    @OneToOne(cascade = CascadeType.ALL)
+    private PetType petType;
 }
