@@ -22,4 +22,6 @@ public class Customer {
     private CustomerType customerType;
     @OneToMany(cascade = CascadeType.ALL)
     private Set<Pet> pets;
+    @OneToOne
+    private User user;
 }

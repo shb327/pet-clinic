@@ -30,7 +30,6 @@ public class PetClinicApplication implements CommandLineRunner {
 //                .build());
 //        vetService.save(Vet.builder()
 //                .user(vetUser)
-//                .aboba("obama")
 //                .build());
 //        userService.save(User.builder()
 //                .username("customer")

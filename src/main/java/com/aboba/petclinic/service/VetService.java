@@ -5,6 +5,7 @@ import com.aboba.petclinic.model.Vet;
 import com.aboba.petclinic.repository.VetRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -27,5 +28,9 @@ public class VetService {
             vet.setUser(userService.getCurrentUser());
         }
         return vetRepository.save(vet);
+    }
+
+    public List<Vet> getAllVets(){
+        return vetRepository.findAll();
     }
 }

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/">
+    <head>
+        <title>Pet Clinic</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com"> 
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/css.css">
+    </head>
+    <body>
+        <header>
+           <img src="/logo.jpg">
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#pets">Pets</a></li>
+                    <li><a href="#vets">Veterinarians</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <table class="styled-table">
+                <thead>
+                    <tr>
+                        <th>Fisrtname</th>
+                        <th>Lastname</th>
+                        <th>Age</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="vet:${vets}" class="tooltipTrigger">
+                        <td th:text="${vet.getUser().getFirstName()}"></td>
+                        <td th:text="${vet.getUser().getLastName()}">
+                            <span class="tooltip">Sugery, Lab</span>
+                        </td>
+                        <td th:text="${vet.getUser().getAge()}"></td>
+                        <td th:text="${vet.getUser().getEmail()}"></td>
+                    </tr>
+                    <tr class="tooltipTrigger">
+                        <td>Dima</td>
+                        <td>Biban 
+                            <span class="tooltip">Surgery, Pathology</span></td>
+                        <td>20</td>
+                        <td>biban@balaban.com</td>
+                    </tr>
+                </tbody>
+            </table>
+        </main>
+    </body>
+</html>
