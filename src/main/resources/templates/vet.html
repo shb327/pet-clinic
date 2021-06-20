@@ -1,15 +1,44 @@
-<!doctype html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Pet Clinic</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css.css">
 </head>
 <body>
-    <p th:text="${vet.getId()}"></p>
-    <p th:text="${vet.getUser().getUsername()}"></p>
-    <p th:text="${vet.getAboba()}"></p>
+<header>
+    <img src="logo.jpg">
+    <nav>
+        <ul>
+            <li><a th:href="@{'/vet'}">Home</a></li>
+            <li><a th:href="@{'/vet/pets'}">Pets</a></li>
+            <li><a th:href="@{'/vet/customers'}">Customers</a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <table class="styled-table">
+        <thead>
+        <tr>
+            <th>Fisrtname</th>
+            <th>Lastname</th>
+            <th>Age</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="vet:${vets}" class="tooltipTrigger">
+            <td th:text="${vet.getFirstName()}"></td>
+            <td th:text="${vet.getAge()}"></td>
+            <td th:text="${vet.getEmail()}"></td>
+        </tr>
+        <tr class="tooltipTrigger">
+            <td>Dima</td>
+            <td>20</td>
+            <td>biban@balaban.com</td>
+        </tr>
+        </tbody>
+    </table>
+</main>
 </body>
 </html>
