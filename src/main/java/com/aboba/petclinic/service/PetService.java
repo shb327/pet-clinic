@@ -3,15 +3,13 @@ package com.aboba.petclinic.service;
 import com.aboba.petclinic.DTOs.PetDTO;
 import com.aboba.petclinic.model.Pet;
 import com.aboba.petclinic.model.PetType;
-import com.aboba.petclinic.model.Vet;
 import com.aboba.petclinic.repository.PetRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.parameters.P;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.NoSuchElementException;
+import java.util.Optional;
 
 @Service
 public class PetService implements  IPetService{
@@ -28,11 +26,17 @@ public class PetService implements  IPetService{
     }
 
     @Override
-    public List<PetDTO> getAllPets(){
+    public List<PetDTO> getAllPets() {
         List<PetDTO> dtos = new ArrayList<>();
         for (Pet pet : petRepository.findAll()) {
             dtos.add(new PetDTO(pet));
         }
         return dtos;
+    }
+
+    @Override
+    public Optional<PetDTO> findPetById(Long petId) {
+        return petRepository.findById(petId)
+                .map(PetDTO::new);
     }
 }

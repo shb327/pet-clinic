@@ -21,14 +21,14 @@
             <h1 class="aligncenter">Choose Pet:</h1>
             <form  action="/customer/petchoose" class="data" method="post">
                 <div class="aligncenter">
-                    <input type="text" placeholder="Desired Date" name="first">
-                    <select name="animal">
+                    <input type="text" placeholder="Desired Date" name="date">
+                    <select name="pet_id">
                         <option th:each="pet : ${pets}"
                                 th:value="${pet.getId()}"
                                 th:text="${pet.getName()}">
                         </option>
                     </select>
-                    <input type="long-text"placeholder="Short Decription" name="last">
+                    <input type="long-text" placeholder="Short Description" name="description">
                     <div class="aligncenter">
                         <button>Cancel</button>
                         <button type="submit">Finish</button>

@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org/">
     <head>
         <title>Pet Clinic</title>
-        <link rel="preconnect" href="https://fonts.gstatic.com"> 
+        <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="/css.css">
     </head>
@@ -29,13 +29,13 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr th:each="pet:${pets}" >
-                        <td th:text="${pet.getName()}"></td>
-                        <td th:text="${pet.getPetType()}"></td>
-                        <td th:text="${pet.getWeight()}"></td>
-                        <td th:text="${pet.getAge()}"></td>
-                        <td th:text="${pet.getPetStatus()}"></td>
-                    </tr>
+                <tr th:each="pet : ${pets}">
+                    <td th:text="${pet.getName()}"></td>
+                    <td th:text="${pet.getType().getName()}"></td>
+                    <td th:text="${pet.getWeight()}"></td>
+                    <td th:text="${pet.getAge()}"></td>
+                    <td th:text="${pet.getStatus().getUnderTreatment()} ? 'Healthy' : 'Treated'"></td>
+                </tr>
                 </tbody>
             </table>
         </main>

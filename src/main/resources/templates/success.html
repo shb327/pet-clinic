@@ -1,29 +1,29 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Pet Clinic</title>
-        <link rel="preconnect" href="https://fonts.gstatic.com"> 
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="css.css">
-    </head>
-    <body>
-        <header>
-           <img src="logo.jpg">
-            <nav>
+<html xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <title>Pet Clinic</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css.css">
+</head>
+<body>
+<header>
+    <img src="/logo.jpg">
+    <nav>
                 <ul>
-                    <li><a href="#home">Home</a></li>
+                    <li><a th:href="@{'/customer'}">Home</a></li>
                     <li><a href="#pets">Pets</a></li>
-                    <li><a href="#vets">Veterinarians</a></li>
+                    <li><a th:href="@{'/customer/vets'}">Veterinarians</a></li>
                 </ul>
             </nav>
         </header>
         <main>
             <h1 class="aligncenter">Appointment is Submitted!</h1>
             <p class="aligncenter">
-                <img src="cat.png" alt="cat" class="center">
+                <img src="/cat.png" alt="cat" class="center">
             </p>
             <p class="aligncenter">
-                <a href="#" class="myButton">Book Appointment</a>
+                <a th:href="@{'/'}" class="myButton">Return to home</a>
             </p>
         </main>
     </body>
