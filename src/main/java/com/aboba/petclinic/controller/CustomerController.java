@@ -16,20 +16,31 @@ import java.util.NoSuchElementException;
 @RequestMapping("/customer")
 public class CustomerController {
 
-    @Autowired
+    final
     VetService vetService;
 
-    @Autowired
+    final
     PetService petService;
 
-    @Autowired
+    final
     AppointmentRepository appointmentRepository;
+
+    public CustomerController(VetService vetService, PetService petService, AppointmentRepository appointmentRepository) {
+        this.vetService = vetService;
+        this.petService = petService;
+        this.appointmentRepository = appointmentRepository;
+    }
 
     @GetMapping
     public String home() {
         return "customer";
     }
 
+    /**
+     * Show vets
+     * @param model - object for pasrdwq
+     * @return html template name
+     */
     @GetMapping("vets")
     public String showVets(Model model) {
         model.addAttribute("vets", vetService.getAllVets());
