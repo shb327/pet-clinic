@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <title>Pet Clinic</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css.css">
+</head>
+<body>
+<header>
+    <img src="/logo.jpg">
+    <nav>
+        <ul>
+            <li><a th:href="@{'/vet'}">Home</a></li>
+            <li><a href="#pets">Pets</a></li>
+            <li><a th:href="@{'/vet/customers'}">Costumers</a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <table class="styled-table">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Weight</th>
+            <th>Age</th>
+            <th>Status</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="pet : ${vetpets}">
+            <td th:text="${pet.getName()}"></td>
+            <td th:text="${pet.getType().getName()}"></td>
+            <td th:text="${pet.getWeight()}"></td>
+            <td th:text="${pet.getAge()}"></td>
+            <td th:text="${pet.getStatus().getUnderTreatment()} ? 'Healthy' : 'Treated'"></td>
+        </tr>
+        </tbody>
+    </table>
+</main>
+</body>
+</html>

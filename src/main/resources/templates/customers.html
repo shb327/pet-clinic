@@ -4,16 +4,16 @@
     <title>Pet Clinic</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css.css">
+    <link rel="stylesheet" href="/css.css">
 </head>
 <body>
 <header>
-    <img src="logo.jpg">
+    <img src="/logo.jpg">
     <nav>
         <ul>
             <li><a th:href="@{'/vet'}">Home</a></li>
             <li><a th:href="@{'/vet/vetpets'}">Pets</a></li>
-            <li><a th:href="@{'/vet/customers'}">Customers</a></li>
+            <li><a href="#customers">Customers</a></li>
         </ul>
     </nav>
 </header>
@@ -21,15 +21,19 @@
     <table class="styled-table">
         <thead>
         <tr>
-            <th>Date</th>
-            <th>Description</th>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Adddress</th>
+            <th>Email</th>
         </tr>
         </thead>
         <tbody>
-            <tr th:each="appointment:${appointments}" class="tooltipTrigger">
-                <td th:text="${appointment.getDate()}"></td>
-                <td th:text="${appointment.getDescription()}"></td>
-            </tr>
+        <tr th:each="customer: ${customers}">
+            <td th:text="${customer.user.getFirstName()}"></td>
+            <td th:text="${customer.user.getLastName}"></td>
+            <td th:text="${customer.user.getAddress()}"></td>
+            <td th:text="${customer.user.getEmail()}"></td>
+        </tr>
         </tbody>
     </table>
 </main>

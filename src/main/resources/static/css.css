@@ -38,9 +38,30 @@ a {
     text-decoration:none;
 }
 
+.cancel{
+    appearance:none;
+    -webkit-appearance:none;
+    border:none;
+    background-color: black;
+    border-radius:28px;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family: 'Montserrat', sans-serif;
+    font-size:17px;
+    font-weight: medium;
+    padding:16px 31px;
+    text-decoration:none;
+}
+
 a:hover {
     background-color: white;
     color: black;
+}
+
+.cancel:hover {
+    background-color:#5c5c5c;
+    color: white;
 }
 
 a:active {
@@ -150,18 +171,16 @@ header li a {
     padding:20px;
 }
 
-select {
+select{
     font-family: 'Montserrat', sans-serif;
-    font-size:17px;
+    font-size: 17px;
     font-weight: medium;
-    padding:16px 31px;
-    border-radius:10px;
-    background-color: white;
-
-
     width:600px;
+    padding: 10px;
     margin-left: 4px;
+    background-position-y: 15px;
     margin-bottom: 16px;
+    border-radius: 28px;
     border: 2px solid #eee;
 }
 
@@ -221,6 +240,18 @@ input[type=long-text] {
 }
 
 input[type=password] {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 17px;
+    font-weight: medium;
+    width:600px;
+    padding:10px;
+    margin-left: 4px;
+    margin-bottom: 16px;
+    border-radius: 28px;
+    border: 2px solid #eee;
+}
+
+input[type=date] {
     font-family: 'Montserrat', sans-serif;
     font-size: 17px;
     font-weight: medium;

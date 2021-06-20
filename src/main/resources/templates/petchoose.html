@@ -30,17 +30,11 @@
                     </select>
                     <input type="long-text" placeholder="Short Description" name="description">
                     <div class="aligncenter">
-                        <button>Cancel</button>
+                        <a th:href="@{'/customer'}" class="cancel">Home</a>
                         <button type="submit">Finish</button>
                     </div>
                 </div>
             </form>
-
-            <!--<div class="aligncenter">-->
-                <!--<a th:href="@{'/customer'}" class="myButton">Cancel</a>-->
-                <!--<a th:href="@{'/customer/petchoose'}" class="myButton">Create New</a>-->
-                <!--<a th:href="@{'/customer/fininfo'}" class="myButton">Continue</a>-->
-            <!--</div>-->
         </main>
     </body>
 </html>
