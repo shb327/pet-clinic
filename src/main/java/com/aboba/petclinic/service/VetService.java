@@ -1,26 +1,29 @@
 package com.aboba.petclinic.service;
 
+import com.aboba.petclinic.DTOs.VetDTO;
 import com.aboba.petclinic.model.User;
 import com.aboba.petclinic.model.Vet;
 import com.aboba.petclinic.repository.VetRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
 @Service
-public class VetService {
-    private final VetRepository vetRepository;
-    private final UserService userService;
+public class VetService implements IVetService {
+    @Autowired
+    VetRepository vetRepository;
 
-    public VetService(VetRepository vetRepository, UserService userService) {
-        this.vetRepository = vetRepository;
-        this.userService = userService;
-    }
+    @Autowired
+    UserService userService;
 
-    public Vet getCurrentVet() {
-        return vetRepository.findByUser(userService.getCurrentUser())
+    @Override
+    public VetDTO getCurrentVet() {
+        Vet vet = vetRepository.findByUser(userService.getCurrentUser())
                 .orElseThrow(() -> new IllegalArgumentException("username not found"));
+        return new VetDTO(vet);
     }
 
     public Vet save(Vet vet) {
@@ -30,7 +33,12 @@ public class VetService {
         return vetRepository.save(vet);
     }
 
-    public List<Vet> getAllVets(){
-        return vetRepository.findAll();
+    @Override
+    public List<VetDTO> getAllVets(){
+        List<VetDTO> dtos = new ArrayList<>();
+        for (Vet pet : vetRepository.findAll()) {
+            dtos.add(new VetDTO(pet));
+        }
+        return dtos;
     }
 }

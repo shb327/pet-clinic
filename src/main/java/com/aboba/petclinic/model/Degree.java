@@ -8,25 +8,18 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import java.util.List;
 
-@Data
 @Entity
-@Builder
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Vet {
+@Builder
+public class Degree {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    private String name;
+    private Integer complexity;
 
-    private Integer yearsOfExperience;
-
-    @OneToOne
-    private User user;
-
-    @ManyToMany(cascade = CascadeType.MERGE)
-    @JoinTable(
-            name = "vet_specialization",
-            joinColumns = {@JoinColumn(name = "vet_id")},
-            inverseJoinColumns = {@JoinColumn(name = "specialization_id")})
+    @ManyToMany(mappedBy = "degrees")
     private List<Specialization> specializations;
 }
