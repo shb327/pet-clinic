@@ -217,5 +217,17 @@ input[type=long-text] {
 }
 
 *, *:before, *:after {
-  box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+input[type=password] {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 17px;
+    font-weight: medium;
+    width: 600px;
+    padding: 10px;
+    margin-left: 4px;
+    margin-bottom: 16px;
+    border-radius: 28px;
+    border: 2px solid #eee;
 }

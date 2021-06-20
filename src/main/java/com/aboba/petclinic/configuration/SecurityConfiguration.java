@@ -2,7 +2,6 @@ package com.aboba.petclinic.configuration;
 
 import com.aboba.petclinic.service.UserService;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
@@ -24,11 +23,16 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
                 .antMatchers("/vet/**").hasAuthority("VET")
-                .antMatchers(HttpMethod.POST, "/customer**").hasAuthority("CUSTOMER")
-                .antMatchers(HttpMethod.GET, "/customer**").hasAuthority("CUSTOMER")
+                .antMatchers("/customer**").hasAuthority("CUSTOMER")
+                .antMatchers("/css.css", "/logo.jpg").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
+                .loginPage("/login")
+                .loginProcessingUrl("/login")
+                .defaultSuccessUrl("/", true)
+                .failureUrl("/login?error=true")
+                .permitAll()
                 .and()
                 .csrf().disable();
     }
