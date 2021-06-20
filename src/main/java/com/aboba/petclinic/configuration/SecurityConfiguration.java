@@ -23,7 +23,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
                 .antMatchers("/vet**").hasAuthority("VET")
-                .antMatchers("/customer**").hasAuthority("CUSTOMER")
+                .antMatchers("/customer/**").hasAuthority("CUSTOMER")
                 .anyRequest().authenticated()
                 .and()
                 .formLogin();

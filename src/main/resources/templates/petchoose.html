@@ -1,39 +1,46 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org/">
     <head>
         <title>Pet Clinic</title>
         <link rel="preconnect" href="https://fonts.gstatic.com"> 
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="css.css">
+        <link rel="stylesheet" href="/css.css">
     </head>
     <body>
         <header>
-           <img src="logo.jpg">
+           <img src="/logo.jpg">
             <nav>
                 <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#pets">Pets</a></li>
-                    <li><a href="#vets">Veterinarians</a></li>
+                    <li><a th:href="@{'/customer'}">Home</a></li>
+                    <li><a th:href="@{'/customer/pets'}">Pets</a></li>
+                    <li><a th:href="@{'/customer/vets'}">Veterinarians</a></li>
                 </ul>
             </nav>
         </header>
         <main>
             <h1 class="aligncenter">Choose Pet:</h1>
-            <form class="data" action="/action_page.php">
-                <select name="animal">
-                    <option value="dog">Rex</option>
-                    <option value="cat">John</option>
-                    <option value="">Steve</option>
-                </select>
-                <p class="aligncenter">
-                    <img src="vet.png" alt="vet" class="center">
-                </p>
+            <form  action="/customer/petchoose" class="data" method="post">
                 <div class="aligncenter">
-                    <button>Create New</button>
-                    <button>Create New</button>
-                    <button>Continue</button>
+                    <input type="text" placeholder="Desired Date" name="first">
+                    <select name="animal">
+                        <option th:each="pet : ${pets}"
+                                th:value="${pet.getId()}"
+                                th:text="${pet.getName()}">
+                        </option>
+                    </select>
+                    <input type="long-text"placeholder="Short Decription" name="last">
+                    <div class="aligncenter">
+                        <button>Cancel</button>
+                        <button type="submit">Finish</button>
+                    </div>
                 </div>
             </form>
+
+            <!--<div class="aligncenter">-->
+                <!--<a th:href="@{'/customer'}" class="myButton">Cancel</a>-->
+                <!--<a th:href="@{'/customer/petchoose'}" class="myButton">Create New</a>-->
+                <!--<a th:href="@{'/customer/fininfo'}" class="myButton">Continue</a>-->
+            <!--</div>-->
         </main>
     </body>
 </html>

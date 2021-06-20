@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import org.hibernate.annotations.JoinColumnOrFormula;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Data
@@ -27,4 +28,7 @@ public class Pet {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "pet_status_id")
     private PetStatus petStatus;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    private Set<Appointment> appointments;
 }

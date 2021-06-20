@@ -154,10 +154,15 @@ select {
     font-family: 'Montserrat', sans-serif;
     font-size:17px;
     font-weight: medium;
-    width: 100%;
     padding:16px 31px;
     border-radius:10px;
     background-color: white;
+
+
+    width:600px;
+    margin-left: 4px;
+    margin-bottom: 16px;
+    border: 2px solid #eee;
 }
 
 button{

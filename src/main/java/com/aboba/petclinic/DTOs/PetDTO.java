@@ -5,6 +5,7 @@ import lombok.Getter;
 
 @Getter
 public class PetDTO {
+    private Long id;
     private String name;
     private String type;
     private Integer weight;
@@ -12,6 +13,7 @@ public class PetDTO {
     private String status;
 
     public PetDTO(Pet pet) {
+        this.id = pet.getId();
         this.name = pet.getName();
         this.type = pet.getPetType().getName();
         this.weight = pet.getWeight();

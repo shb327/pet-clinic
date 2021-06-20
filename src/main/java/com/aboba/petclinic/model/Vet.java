@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.List;
+import java.util.Set;
 
 @Data
 @Entity
@@ -29,4 +30,7 @@ public class Vet {
             joinColumns = {@JoinColumn(name = "vet_id")},
             inverseJoinColumns = {@JoinColumn(name = "specialization_id")})
     private List<Specialization> specializations;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    private Set<Appointment> appointments;
 }
