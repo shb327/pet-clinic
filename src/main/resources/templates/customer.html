@@ -4,22 +4,22 @@
         <title>Pet Clinic</title>
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="css.css">
+        <link rel="stylesheet" href="/css.css">
     </head>
     <body>
         <header>
-           <img src="logo.jpg">
+           <img src="/logo.jpg">
             <nav>
                 <ul>
                     <li><a href="#home">Home</a></li>
-                    <li><a href="#pets">Pets</a></li>
+                    <li><a th:href="@{'/customer/pets'}"}>Pets</a></li>
                     <li><a th:href="@{'/customer/vets'}">Veterinarians</a></li>
                 </ul>
             </nav>
         </header>
         <main>
             <p class="aligncenter">
-                <img src="dog.png" alt="dog" class="center">
+                <img src="/dog.png" alt="dog" class="center">
             </p>
             <p class="aligncenter">
                 <a href="#" class="myButton">Book Appointment</a>

@@ -11,8 +11,8 @@
            <img src="/logo.jpg">
             <nav>
                 <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#pets">Pets</a></li>
+                    <li><a th:href="@{'/customer'}">Home</a></li>
+                    <li><a th:href="@{'/customer/pets'}">Pets</a></li>
                     <li><a href="#vets">Veterinarians</a></li>
                 </ul>
             </nav>
@@ -31,7 +31,7 @@
                     <tr th:each="vet:${vets}" class="tooltipTrigger">
                         <td th:text="${vet.getUser().getFirstName()}"></td>
                         <td th:text="${vet.getUser().getLastName()}">
-                            <span class="tooltip">Sugery, Lab</span>
+                            <span class="tooltip">Surgery, Lab</span>
                         </td>
                         <td th:text="${vet.getUser().getAge()}"></td>
                         <td th:text="${vet.getUser().getEmail()}"></td>

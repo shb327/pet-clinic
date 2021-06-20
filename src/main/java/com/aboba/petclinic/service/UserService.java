@@ -52,12 +52,11 @@ public class UserService implements UserDetailsService {
         if (!BCRYPT_PATTERN.matcher(user.getPassword()).matches()) {
             user.setPassword(passwordEncoder.encode(user.getPassword()));
         }
-
         return userRepository.save(user);
     }
 
     public User getCurrentUser() {
         return userRepository.findByUsername(SecurityContextHolder.getContext().getAuthentication().getName())
-                .orElseThrow(() -> new IllegalArgumentException("username not found"));
+                .orElseThrow(() -> new IllegalArgumentException("Looks like, username is not found!"));
     }
 }

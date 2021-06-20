@@ -1,5 +1,6 @@
 package com.aboba.petclinic.controller;
 
+import com.aboba.petclinic.service.PetService;
 import com.aboba.petclinic.service.VetService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -12,7 +13,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class CustomerController {
 
     @Autowired
-    private VetService vetService;
+    VetService vetService;
+
+    @Autowired
+    PetService petService;
+
 
     @GetMapping
     public String home() {
@@ -23,5 +28,11 @@ public class CustomerController {
     public String showVets(Model model){
         model.addAttribute("vets", vetService.getAllVets());
         return "vets";
+    }
+
+    @GetMapping("pets")
+    public String showPets(Model model){
+        model.addAttribute("pets", petService.getAllPets());
+        return "pets";
     }
 }

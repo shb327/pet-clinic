@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org/">
     <head>
         <title>Pet Clinic</title>
         <link rel="preconnect" href="https://fonts.gstatic.com"> 
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="css.css">
+        <link rel="stylesheet" href="/css.css">
     </head>
     <body>
         <header>
-           <img src="logo.jpg">
+           <img src="/logo.jpg">
             <nav>
                 <ul>
-                    <li><a href="#home">Home</a></li>
+                    <li><a th:href="@{'/customer'}">Home</a></li>
                     <li><a href="#pets">Pets</a></li>
-                    <li><a href="#vets">Veterinarians</a></li>
+                    <li><a th:href="@{'/customer/vets'}">Veterinarians</a></li>
                 </ul>
             </nav>
         </header>
@@ -29,33 +29,12 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Rex</td>
-                        <td>Dog</td>
-                        <td>45</td>
-                        <td>3</td>
-                        <td>Under Treatment</td>
-                    </tr>
-                    <tr>
-                        <td>Susan</td>
-                        <td>Cat</td>
-                        <td>15</td>
-                        <td>4</td>
-                        <td>Healthy</td>
-                    </tr>
-                    <tr>
-                        <td>Bibki</td>
-                        <td>Bird</td>
-                        <td>2</td>
-                        <td>5</td>
-                        <td>Healthy</td>
-                    </tr>
-                    <tr>
-                        <td>Chopper</td>
-                        <td>Bird</td>
-                        <td>3</td>
-                        <td>2</td>
-                        <td>Healthy</td>
+                    <tr th:each="pet:${pets}" >
+                        <td th:text="${pet.getName()}"></td>
+                        <td th:text="${pet.getPetType()}"></td>
+                        <td th:text="${pet.getWeight()}"></td>
+                        <td th:text="${pet.getAge()}"></td>
+                        <td th:text="${pet.getPetStatus()}"></td>
                     </tr>
                 </tbody>
             </table>

@@ -18,10 +18,13 @@ public class Customer {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private Integer discount;
+
     @OneToOne(cascade = CascadeType.ALL)
     private CustomerType customerType;
+
     @OneToMany(cascade = CascadeType.ALL)
     private Set<Pet> pets;
+
     @OneToOne
     private User user;
 }
