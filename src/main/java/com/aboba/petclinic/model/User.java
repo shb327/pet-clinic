@@ -7,6 +7,12 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
+/**
+ * Simple JavaBean domain object representing a normal application user.
+ *
+ * @author Bohdan Shkamarida
+ */
+
 @Entity
 @Data
 @AllArgsConstructor

@@ -11,6 +11,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * Simple JavaBean domain object representing a service for pet
+ *
+ * @author Bohdan Shkamarida
+ */
+
 @Service
 public class PetService implements  IPetService{
     @Autowired

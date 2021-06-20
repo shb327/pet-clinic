@@ -5,6 +5,11 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
+/**
+ *
+ * @author Bohdan Shkamarida
+ */
+
 @Controller
 public class MainController {
 
@@ -17,6 +22,11 @@ public class MainController {
         }
 
     }
+
+    /**
+     *
+     *  Mapping for User Log In
+     */
 
     @GetMapping("/login")
     public String login() {

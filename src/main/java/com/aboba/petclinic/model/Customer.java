@@ -8,6 +8,13 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import java.util.Set;
 
+/**
+ * Simple JavaBean domain object representing a regular application customer.
+ * This class is an instance of the class User.
+ *
+ * @author Bohdan Shkamarida
+ */
+
 @Entity
 @Data
 @AllArgsConstructor

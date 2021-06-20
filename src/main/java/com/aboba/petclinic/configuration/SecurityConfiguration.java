@@ -6,6 +6,12 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
+/**
+ * Simple Spring Security domain object implemented for Spring Security Configuration.
+ *
+ * @author Bohdan Shkamarida
+ */
+
 @Configuration
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     private final UserService userService;

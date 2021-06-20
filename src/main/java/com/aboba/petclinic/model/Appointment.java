@@ -7,6 +7,12 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
+/**
+ * Simple JavaBean domain object representing an appointment
+ *
+ * @author Bohdan Shkamarida
+ */
+
 @Data
 @Entity
 @Builder

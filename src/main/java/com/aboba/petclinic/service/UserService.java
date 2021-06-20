@@ -17,6 +17,12 @@ import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+/**
+ * Simple JavaBean domain object representing a service for the user
+ *
+ * @author Bohdan Shkamarida
+ */
+
 @Service
 public class UserService implements UserDetailsService {
     private static final Pattern BCRYPT_PATTERN = Pattern.compile("\\A\\$2(a|y|b)?\\$(\\d\\d)\\$[./0-9A-Za-z]{53}");

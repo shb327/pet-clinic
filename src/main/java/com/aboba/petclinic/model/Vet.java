@@ -9,6 +9,13 @@ import javax.persistence.*;
 import java.util.List;
 import java.util.Set;
 
+/**
+ * Simple JavaBean domain object representing a veterinarian
+ * This class is an instance of the class User
+ *
+ * @author Bohdan Shkamarida
+ */
+
 @Data
 @Entity
 @Builder

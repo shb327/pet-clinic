@@ -7,6 +7,13 @@ import lombok.Getter;
 
 import java.util.Set;
 
+/**
+ * Simple JavaBean domain object representing a pet class
+ * Was implemented in order to transfer pet object to the view
+ *
+ * @author Bohdan Shkamarida
+ */
+
 @Getter
 public class PetDTO {
     private Long id;

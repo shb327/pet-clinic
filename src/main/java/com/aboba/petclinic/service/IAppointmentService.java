@@ -4,6 +4,9 @@ import com.aboba.petclinic.model.Appointment;
 
 import java.util.List;
 
-public interface IAppointmentService {
-
-}
+/**
+ * Simple JavaBean domain interface representing a service for appointment
+ *
+ * @author Bohdan Shkamarida
+ */
+public interface IAppointmentService { }

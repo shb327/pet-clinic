@@ -9,6 +9,12 @@ import org.hibernate.annotations.JoinColumnOrFormula;
 import javax.persistence.*;
 import java.util.Set;
 
+/**
+ * Simple JavaBean domain object representing a pet
+ *
+ * @author Bohdan Shkamarida
+ */
+
 @Entity
 @Data
 @AllArgsConstructor

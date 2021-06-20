@@ -8,6 +8,12 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import java.util.List;
 
+/**
+ * Simple JavaBean domain object representing a specialization of the veterinarian
+ *
+ * @author Bohdan Shkamarida
+ */
+
 @Entity
 @Data
 @AllArgsConstructor

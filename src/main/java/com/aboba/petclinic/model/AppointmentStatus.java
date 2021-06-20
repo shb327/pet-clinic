@@ -7,6 +7,13 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+/**
+ * Simple JavaBean domain object representing a status for the appointment
+ * Instance of the class status
+ *
+ * @author Bohdan Shkamarida
+ */
+
 @Entity
 @Data
 @AllArgsConstructor

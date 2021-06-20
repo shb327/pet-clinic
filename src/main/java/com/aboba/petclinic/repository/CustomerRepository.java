@@ -10,10 +10,22 @@ import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
 
+/**
+ * Repository class for <code>Customer</code> domain objects
+ *
+ * @author Bohdan Shkamarida
+ */
+
 @Repository
 public interface CustomerRepository extends JpaRepository<Customer, Long> {
     Optional<Customer> findByUser(User user);
 
+
+    /**
+     * Retrieve an {@link Customer} from the data store by id.
+     * @param userId the id to search for
+     * @return the {@link Customer} if found
+     */
     @Query("FROM Vet WHERE user.id = :userId")
     Optional<Customer> findByUserId(@Param("userId") Long userId);
 }

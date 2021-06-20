@@ -8,7 +8,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
- * VEt afrwpqorfhjqw
+ *
+ * @author Bohdan Shkamarida
  */
 @Slf4j
 @Controller
@@ -21,6 +22,10 @@ public class VetController {
         this.vetService = vetService;
     }
 
+    /**
+     *
+     *  Mapping for Vet Home Page
+     */
     @GetMapping
     public String home(Model model) {
         model.addAttribute("vet", vetService.getCurrentVet());

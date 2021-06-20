@@ -7,6 +7,14 @@ import lombok.Getter;
 
 import java.util.List;
 
+
+/**
+ * Simple JavaBean domain object representing a veterinarian class
+ * Was implemented in order to transfer pet object to the view
+ *
+ * @author Bohdan Shkamarida
+ * */
+
 @Getter
 public class VetDTO {
     private String firstName;
