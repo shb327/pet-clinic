@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.Date;
 
 /**
  * Simple JavaBean domain object representing an appointment
@@ -24,7 +25,7 @@ public class Appointment {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String date;
+    private Date date;
     private String description;
 
     @ManyToOne(fetch = FetchType.LAZY)
@@ -34,4 +35,7 @@ public class Appointment {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "vet_id")
     private Vet vet;
+
+    @Embedded
+    private AppointmentStatus status;
 }

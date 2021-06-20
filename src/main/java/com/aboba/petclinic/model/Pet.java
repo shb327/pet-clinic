@@ -31,8 +31,7 @@ public class Pet {
     @OneToOne(cascade = CascadeType.ALL)
     private PetType petType;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "pet_status_id")
+    @Embedded
     private PetStatus petStatus;
 
     @OneToMany(cascade = CascadeType.ALL)
