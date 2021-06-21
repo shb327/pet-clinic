@@ -262,3 +262,21 @@ input[type=date] {
     border-radius: 28px;
     border: 2px solid #eee;
 }
+
+input:hover{
+    margin-bottom: 16px;
+    border-radius: 28px;
+    border: 2px solid black;
+}
+
+input::selection{
+    margin-bottom: 16px;
+    border-radius: 28px;
+    border: 2px solid black;
+}
+
+select:hover{
+    margin-bottom: 16px;
+    border-radius: 28px;
+    border: 2px solid black;
+}
