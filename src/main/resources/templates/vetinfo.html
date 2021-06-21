@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org/">
     <head>
         <title>Pet Clinic</title>
         <link rel="preconnect" href="https://fonts.gstatic.com"> 
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="css.css">
+        <link rel="stylesheet" href="/css.css">
     </head>
     <body>
         <header>
-           <img src="logo.jpg">
+           <img src="/logo.jpg">
             <nav>
                 <ul>
                     <li><a href="#home">Home</a></li>
@@ -20,7 +20,7 @@
         <main>
             <div class="split left">
               <div class="centered">
-                <img src="vet.png" alt="vet">
+                <img src="/vet.png" alt="vet">
               </div>
             </div>
 
@@ -34,15 +34,18 @@
                     </thead>
                     <tbody>
                         <tr >
-                            <td>Vlad</td>
-                            <td>Kutsenko</td>
+                            <td th:text="${vet.getFirstName()}"></td>
+                            <td th:text="${vet.getLastName()}"></td>
                         </tr>
                         <tr >
-                            <td>kutsenko@gmail.com</td>
-                            <td>10 y.e.</td>
+                            <td th:text="${vet.getEmail()}"></tdth:text></td>
+                            <td>
+                                <span th:text="${vet.getYearsOfExperience()}"></span>
+                                <span> y.e.</span>
+                            </td>
                         </tr>
                         <tr >
-                            <td colspan="2">kutsenko@gmail.com</td>
+                            <td th:text="${vet.getSpecializations()}" colspan="2" ></td>
                         </tr>
                     </tbody>
                 </table>

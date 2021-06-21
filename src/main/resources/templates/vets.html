@@ -29,19 +29,16 @@
                 </thead>
                 <tbody>
                     <tr th:each="vet:${vets}" class="tooltipTrigger">
-                        <td th:text="${vet.getFirstName()}"></td>
                         <td>
-                            <span th:text="${vet.getLastName()}"></span>
-                            <span class="tooltip"  th:text="${vet.getSpecializations()}"></span>
+                            <a style="all:unset; color: black;" th:href="@{/customer/vetinfo/{id}(id=${vet.getId()})}" th:text="${vet.getFirstName()}"></a>
                         </td>
+                        <td th:text="${vet.getLastName()}"></td>
                         <td th:text="${vet.getAge()}"></td>
                         <td th:text="${vet.getEmail()}"></td>
                     </tr>
-                    <tr class="tooltipTrigger">
+                    <tr>
                         <td>Dima</td>
-                        <td>Biban
-                            <span class="tooltip">Surgery, Pathology</span>
-                        </td>
+                        <td>Biban</td>
                         <td>20</td>
                         <td>biban@balaban.com</td>
                     </tr>

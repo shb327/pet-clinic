@@ -14,4 +14,6 @@ public interface IVetService {
     VetDTO getCurrentVet();
 
     List<VetDTO> getAllVets();
+
+    VetDTO getVetById(Long id);
 }

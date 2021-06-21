@@ -96,4 +96,17 @@ public class CustomerController {
     public String showFinalInfo(@PathVariable Long pet_id) {
         return "fininfo";
     }
+
+
+
+    /**
+     * Mapping for Showing Vet's Personal Information.
+     *
+     * @return String with the model attributes for the view
+     */
+    @GetMapping("vetinfo/{id}")
+    public String showVetInfo(@PathVariable Long id, Model model) {
+        model.addAttribute("vet", vetService.getVetById(id));
+        return "vetinfo";
+    }
 }

@@ -17,18 +17,22 @@ import java.util.List;
 
 @Getter
 public class VetDTO {
+    private Long id;
     private String firstName;
     private String lastName;
     private Integer age;
     private String email;
     private String specializations;
+    private Integer yearsOfExperience;
 
     public VetDTO(Vet vet) {
+        this.id = vet.getId();
         this.firstName = vet.getUser().getFirstName();
         this.lastName = vet.getUser().getLastName();
         this.age = vet.getUser().getAge();
         this.email = vet.getUser().getEmail();
         this.specializations = getSpecializations(vet.getSpecializations());
+        this.yearsOfExperience = vet.getYearsOfExperience();
     }
 
     private String getSpecializations(List<Specialization> specializations) {

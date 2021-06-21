@@ -34,7 +34,7 @@
                     <td th:text="${pet.getType().getName()}"></td>
                     <td th:text="${pet.getWeight()}"></td>
                     <td th:text="${pet.getAge()}"></td>
-                    <td th:text="${pet.getStatus().getUnderTreatment()} ? 'Healthy' : 'Treated'"></td>
+                    <td th:text="${pet.getStatus().getUnderTreatment()} ? 'Treated' : 'Healthy'"></td>
                 </tr>
                 </tbody>
             </table>

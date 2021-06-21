@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Optional;
 
 /**
@@ -42,9 +43,12 @@ public class VetService implements IVetService {
     @Override
     public List<VetDTO> getAllVets(){
         List<VetDTO> dtos = new ArrayList<>();
-        for (Vet pet : vetRepository.findAll()) {
-            dtos.add(new VetDTO(pet));
-        }
+        for (Vet pet : vetRepository.findAll()) dtos.add(new VetDTO(pet));
         return dtos;
+    }
+
+    @Override
+    public VetDTO getVetById(Long id){
+        return new VetDTO(vetRepository.findById(id).orElseThrow(NoSuchElementException::new));
     }
 }
