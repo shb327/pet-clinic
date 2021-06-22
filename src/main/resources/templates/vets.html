@@ -32,9 +32,15 @@
                         <td>
                             <a style="all:unset; color: black;" th:href="@{/customer/vetinfo/{id}(id=${vet.getId()})}" th:text="${vet.getFirstName()}"></a>
                         </td>
-                        <td th:text="${vet.getLastName()}"></td>
-                        <td th:text="${vet.getAge()}"></td>
-                        <td th:text="${vet.getEmail()}"></td>
+                        <td>
+                            <a style="all:unset; color: black;" th:href="@{/customer/vetinfo/{id}(id=${vet.getId()})}" th:text="${vet.getLastName()}"></a>
+                        </td>
+                        <td>
+                            <a style="all:unset; color: black;" th:href="@{/customer/vetinfo/{id}(id=${vet.getId()})}" th:text="${vet.getAge()}"></a>
+                        </td>
+                        <td>
+                            <a style="all:unset; color: black;" th:href="@{/customer/vetinfo/{id}(id=${vet.getId()})}" th:text="${vet.getEmail()}"></a>
+                        </td>
                     </tr>
                     <tr>
                         <td>Dima</td>
